@@ -1,0 +1,1 @@
+* Terraform main does server provisioning and it provides few basic features to configure software but typically do server provisioning 
