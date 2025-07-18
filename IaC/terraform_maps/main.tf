@@ -9,9 +9,13 @@ terraform {
 }
 
 # declaring variable
-variable "my_iam_user_prefix"{
-    type = "string" # type of the variable
-    default = "my_user"
+variable "users"{
+    type = map # type of the variable
+    default = {
+      Ava:"Netherlands,
+      Serah:"Romania",
+      Mirah:"Maldives"
+    }
 }
 
 resource "aws_s3_bucket_versioning" "versioning_example" {
@@ -29,7 +33,10 @@ provider "aws" {
 
 # Creating multiple iam users
 resource "aws_iam_user" "my_users"{
-    count = 2
-    #first user will be created with my_user_1 and so on
-    name = "my_user_${count.index}"
+    for_each=toset(var.users)
+    # for each name key is the element, so using key
+    name=each.key
+    tags{
+      country: each.value
+    }
 }

@@ -34,4 +34,6 @@
 
 * Different configuration inside main.tf can be separated and kept in different files ex: output variables etc... Any number of .tf files inside tf folder will be considered/executed when we do terraform apply/plan
 
-* Its always good to destroy tf after creating it.Take it as a cycle.tf commands will first refreshes the state and then go ahead and executed the config instructions 
+* Its always good to destroy tf after creating it.Take it as a cycle.tf commands will first refreshes the state and then go ahead and executed the config instructions
+
+* Terraform is installed using steps from https://askubuntu.com/questions/983351/how-to-install-terraform-in-ubuntu
