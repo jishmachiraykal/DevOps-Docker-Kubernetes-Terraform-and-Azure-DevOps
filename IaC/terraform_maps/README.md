@@ -1,0 +1,3 @@
+* .tfstafe files also acts as cache, where the previous data can be retrived. It also connects tf object to real world data in the cloud. Ex: my_users is tf object which connects to real world cloud
+
+* It is good practice to have multiple tf projects for a single application. Group cycles having similar resources and have them in single project. Also keeping backup of projects is a good practice which will help recovering the data and avoid data loss. Backup folder can be kept in git repository as well if not in local
